@@ -46,15 +46,15 @@ public class StatsService {
         for (int i = 0; i < lowestSales.length; i++) {
             lowMonth = lowMonth + lowestSales[i];
         }
-            lowMonth = lowMonth / lowestSales.length;
+        lowMonth = lowMonth / lowestSales.length;
 
-            for (int i = 0; i < lowestSales.length; i++) {
-                if (lowMonth > lowestSales[i]) {
-                    countMonths++;
-                }
-                }
-            return countMonths;
+        for (int i = 0; i < lowestSales.length; i++) {
+            if (lowMonth > lowestSales[i]) {
+                countMonths++;
             }
+        }
+        return countMonths;
+    }
 
     public int MonthsWithMaxSales(int[] maxMonthsSales) {
         int maxMonth = 0;
@@ -71,4 +71,4 @@ public class StatsService {
         }
         return countMonths;
     }
-    }
+}

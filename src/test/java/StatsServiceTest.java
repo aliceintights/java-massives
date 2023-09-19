@@ -16,12 +16,12 @@ public class StatsServiceTest {
 
     public void monthlyAverage() {
         StatsService service = new StatsService();
-    int[] average = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] average = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-    int expectedAverage = 15;
-    int actualAverage = service.averageSaleInAMonth(average);
+        int expectedAverage = 15;
+        int actualAverage = service.averageSaleInAMonth(average);
 
-    Assertions.assertEquals(expectedAverage, actualAverage);
+        Assertions.assertEquals(expectedAverage, actualAverage);
     }
 
     public void returnMaxSalesAMonth() {
