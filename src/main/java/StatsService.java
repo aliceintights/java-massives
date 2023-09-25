@@ -1,6 +1,6 @@
 public class StatsService {
 
-    public int sales(int allSales[]) {
+    public int allSales(int allSales[]) {
         int sum = 0;
         for (int value : allSales) {
             sum += value;
@@ -9,13 +9,10 @@ public class StatsService {
     }
 
     public int averageSaleInAMonth(int[] months) {
-        //int[] numbers = months;
-        int sum = 0;
-        for (int i = 0; i < months.length; i++) {
-            sum = sum + months[i];
-        }
-        sum = sum / months.length;
-        return sum;
+        int fullSum = allSales(months);
+
+        int average = fullSum / months.length;
+        return average;
     }
 
     public int maxSales(long[] sales) {
@@ -41,34 +38,24 @@ public class StatsService {
     }
 
     public int MonthsWithLowestSales(int[] lowestSales) {
-        int lowMonth = 0;
-        int countMonths = 0;
-        for (int i = 0; i < lowestSales.length; i++) {
-            lowMonth = lowMonth + lowestSales[i];
-        }
-        lowMonth = lowMonth / lowestSales.length;
+        int averageLow = averageSaleInAMonth(lowestSales);
 
         for (int i = 0; i < lowestSales.length; i++) {
-            if (lowMonth > lowestSales[i]) {
-                countMonths++;
+            if (averageLow > lowestSales[i]) {
+                averageLow++;
             }
         }
-        return countMonths;
+        return averageLow;
     }
 
     public int MonthsWithMaxSales(int[] maxMonthsSales) {
-        int maxMonth = 0;
-        int countMonths = 0;
-        for (int i = 0; i < maxMonthsSales.length; i++) {
-            maxMonth = maxMonth + maxMonthsSales[i];
-        }
-        maxMonth = maxMonth / maxMonthsSales.length;
+        int averageMax = averageSaleInAMonth(maxMonthsSales);
 
         for (int i = 0; i < maxMonthsSales.length; i++) {
-            if (maxMonthsSales[i] > maxMonth) {
-                countMonths++;
+            if (maxMonthsSales[i] > averageMax) {
+                averageMax++;
             }
         }
-        return countMonths;
+        return averageMax;
     }
 }

@@ -9,7 +9,7 @@ public class StatsServiceTest {
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedAmount = 180;
-        int actualAmount = service.sales(sales);
+        int actualAmount = service.allSales(sales);
 
         Assertions.assertEquals(expectedAmount, actualAmount);
     }
