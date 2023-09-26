@@ -38,24 +38,33 @@ public class StatsService {
     }
 
     public int MonthsWithLowestSales(int[] lowestSales) {
-        int averageLow = averageSaleInAMonth(lowestSales);
+        int lowMonth = 0;
+        int countMonths = 0;
+        for (int i = 0; i < lowestSales.length; i++) {
+            lowMonth = lowMonth + lowestSales[i];
+        }
+        lowMonth = lowMonth / lowestSales.length;
 
         for (int i = 0; i < lowestSales.length; i++) {
-            if (averageLow > lowestSales[i]) {
-                averageLow++;
+            if (lowMonth > lowestSales[i]) {
+                countMonths++;
             }
         }
-        return averageLow;
+        return countMonths;
     }
 
     public int MonthsWithMaxSales(int[] maxMonthsSales) {
-        int averageMax = averageSaleInAMonth(maxMonthsSales);
+        int maxMonth = 0;
+        int countMonths = 0;
+        for (int i = 0; i < maxMonthsSales.length; i++) {
+            maxMonth = maxMonth + maxMonthsSales[i];
+        }
 
         for (int i = 0; i < maxMonthsSales.length; i++) {
-            if (maxMonthsSales[i] > averageMax) {
-                averageMax++;
+            if (maxMonthsSales[i] > maxMonth) {
+                countMonths++;
             }
         }
-        return averageMax;
+        return countMonths;
     }
 }

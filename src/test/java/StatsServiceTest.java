@@ -14,6 +14,7 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedAmount, actualAmount);
     }
 
+    @Test
     public void monthlyAverage() {
         StatsService service = new StatsService();
         int[] average = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -24,6 +25,7 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedAverage, actualAverage);
     }
 
+    @Test
     public void returnMaxSalesAMonth() {
         StatsService service = new StatsService();
         long[] maxMonth = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -34,6 +36,7 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedMaxMonth, actualMaxMonth);
     }
 
+    @Test
     public void returnMinSalesAMonth() {
         StatsService service = new StatsService();
         long[] minMonth = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -43,6 +46,8 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expectedMinMonth, actualMinMonth);
     }
+
+    @Test
 
     public void returnLowestSales() {
         StatsService service = new StatsService();
@@ -54,6 +59,7 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedLowMonth, actualLowMonth);
     }
 
+    @Test
     public void returnMaxSales() {
         StatsService service = new StatsService();
         int[] maxSalesMonths = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
