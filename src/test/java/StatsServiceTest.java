@@ -54,7 +54,7 @@ public class StatsServiceTest {
         int[] lowestMonth = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedLowMonth = 5;
-        int actualLowMonth = service.MonthsWithLowestSales(lowestMonth);
+        int actualLowMonth = service.monthsWithLowestSales(lowestMonth);
 
         Assertions.assertEquals(expectedLowMonth, actualLowMonth);
     }
@@ -65,7 +65,7 @@ public class StatsServiceTest {
         int[] maxSalesMonths = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedMaxMonths = 5;
-        int actualMaxMonths = service.MonthsWithLowestSales(maxSalesMonths);
+        int actualMaxMonths = service.monthsWithLowestSales(maxSalesMonths);
 
         Assertions.assertEquals(expectedMaxMonths, actualMaxMonths);
     }
