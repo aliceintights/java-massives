@@ -9,40 +9,40 @@ public class StatsService {
     }
 
     public int averageSaleInAMonth(int[] months) {
-        int fullSumSales = allSales(months);
+        int monthlyAverageSum = allSales(months);
 
-        int averageSalesAMonth = fullSumSales / months.length;
+        int averageSalesAMonth = monthlyAverageSum / months.length;
         return averageSalesAMonth;
     }
 
     public int maxSales(long[] sales) {
-        int maxSales = 0;
+        int maxSumInAMonth = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] >= sales[maxSales]) {
-                maxSales = i;
+            if (sales[i] >= sales[maxSumInAMonth]) {
+                maxSumInAMonth = i;
             }
         }
-        return maxSales + 1;
+        return maxSumInAMonth + 1;
     }
 
     public int minSales(long[] sales) {
-        int minSales = 0;
+        int minSumInAMonth = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] <= sales[minSales]) {
-                minSales = i;
+            if (sales[i] <= sales[minSumInAMonth]) {
+                minSumInAMonth = i;
             }
         }
-        return minSales + 1;
+        return minSumInAMonth + 1;
     }
 
     public int monthsWithLowestSales(int[] lowestSales) {
-        int monthsWithLowestSales = averageSaleInAMonth(lowestSales);
+        int sumLowerThanAverage = averageSaleInAMonth(lowestSales);
         int countMonths = 0;
 
         for (int i = 0; i < lowestSales.length; i++) {
-            if (monthsWithLowestSales > lowestSales[i]) {
+            if (sumLowerThanAverage > lowestSales[i]) {
                 countMonths++;
             }
         }
@@ -50,11 +50,11 @@ public class StatsService {
     }
 
     public int monthsWithMaxSales(int[] maxMonthsSales) {
-        int monthsWithMaxSales = averageSaleInAMonth(maxMonthsSales);
+        int sumHigherThanAverage = averageSaleInAMonth(maxMonthsSales);
         int countMonths = 0;
 
         for (int i = 0; i < maxMonthsSales.length; i++) {
-            if (maxMonthsSales[i] > monthsWithMaxSales) {
+            if (maxMonthsSales[i] > sumHigherThanAverage) {
                 countMonths++;
             }
         }
