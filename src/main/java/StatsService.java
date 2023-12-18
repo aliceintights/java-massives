@@ -9,40 +9,40 @@ public class StatsService {
     }
 
     public int averageSaleInAMonth(int[] months) {
-        int monthlyAverageSum = allSales(months);
+        int averageSaleSumAMonth = allSales(months);
 
-        int averageSalesAMonth = monthlyAverageSum / months.length;
+        int averageSalesAMonth = averageSaleSumAMonth / months.length;
         return averageSalesAMonth;
     }
 
     public int maxSales(long[] sales) {
-        int maxSumInAMonth = 0;
+        int monthNumberWithHighestSales = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] >= sales[maxSumInAMonth]) {
-                maxSumInAMonth = i;
+            if (sales[i] >= sales[monthNumberWithHighestSales]) {
+                monthNumberWithHighestSales = i;
             }
         }
-        return maxSumInAMonth + 1;
+        return monthNumberWithHighestSales + 1;
     }
 
     public int minSales(long[] sales) {
-        int minSumInAMonth = 0;
+        int monthNumberWithLowestSales = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] <= sales[minSumInAMonth]) {
-                minSumInAMonth = i;
+            if (sales[i] <= sales[monthNumberWithLowestSales]) {
+                monthNumberWithLowestSales = i;
             }
         }
-        return minSumInAMonth + 1;
+        return monthNumberWithLowestSales + 1;
     }
 
     public int monthsWithLowestSales(int[] lowestSales) {
-        int sumLowerThanAverage = averageSaleInAMonth(lowestSales);
+        int numberOfMonthsWithSalesLowerThanAverage = averageSaleInAMonth(lowestSales);
         int countMonths = 0;
 
         for (int i = 0; i < lowestSales.length; i++) {
-            if (sumLowerThanAverage > lowestSales[i]) {
+            if (numberOfMonthsWithSalesLowerThanAverage > lowestSales[i]) {
                 countMonths++;
             }
         }
@@ -50,11 +50,11 @@ public class StatsService {
     }
 
     public int monthsWithMaxSales(int[] maxMonthsSales) {
-        int sumHigherThanAverage = averageSaleInAMonth(maxMonthsSales);
+        int numberOfMonthsWithSalesHigherThanAverage = averageSaleInAMonth(maxMonthsSales);
         int countMonths = 0;
 
         for (int i = 0; i < maxMonthsSales.length; i++) {
-            if (maxMonthsSales[i] > sumHigherThanAverage) {
+            if (maxMonthsSales[i] > numberOfMonthsWithSalesHigherThanAverage) {
                 countMonths++;
             }
         }
