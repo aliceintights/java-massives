@@ -38,11 +38,11 @@ public class StatsService {
     }
 
     public int monthsWithLowestSales(int[] lowestSales) {
-        int numberOfMonthsWithSalesLowerThanAverage = averageSaleInAMonth(lowestSales);
+        int averageSaleAmount = averageSaleInAMonth(lowestSales);
         int countMonths = 0;
 
         for (int i = 0; i < lowestSales.length; i++) {
-            if (numberOfMonthsWithSalesLowerThanAverage > lowestSales[i]) {
+            if (averageSaleAmount > lowestSales[i]) {
                 countMonths++;
             }
         }
@@ -50,11 +50,11 @@ public class StatsService {
     }
 
     public int monthsWithMaxSales(int[] maxMonthsSales) {
-        int numberOfMonthsWithSalesHigherThanAverage = averageSaleInAMonth(maxMonthsSales);
+        int averageSaleAmount = averageSaleInAMonth(maxMonthsSales);
         int countMonths = 0;
 
         for (int i = 0; i < maxMonthsSales.length; i++) {
-            if (maxMonthsSales[i] > numberOfMonthsWithSalesHigherThanAverage) {
+            if (maxMonthsSales[i] > averageSaleAmount) {
                 countMonths++;
             }
         }
